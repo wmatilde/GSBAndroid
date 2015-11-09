@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class HotelActivity extends AppCompatActivity {
 
-    // informations affichées dans l'activité
+    // informations affichées dans l'activitéjbhiuefhuirhughurghiuorghorhgiuhZer
     private int annee ;
     private int mois ;
     private int qte ;
