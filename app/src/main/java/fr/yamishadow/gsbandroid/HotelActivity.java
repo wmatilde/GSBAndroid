@@ -5,12 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
 public class HotelActivity extends AppCompatActivity {
 
-    // informations affichées dans l'activitéjbhiuefhuirhughurghiuorghorhgiuhZer
+    // informations affichées dans l'activité
     private int annee ;
     private int mois ;
     private int qte ;
@@ -19,6 +20,10 @@ public class HotelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+        imgReturn_clic() ;
+        dat_clic();
+        cmdPlus_clic() ;
+        cmdMoins_clic() ;
     }
 
     /**
@@ -78,4 +83,29 @@ public class HotelActivity extends AppCompatActivity {
         }
         Global.listFraisMois.get(key).setKm(qte) ;
     }
+
+    private void dat_clic() {
+        final DatePicker uneDate = (DatePicker)findViewById(R.id.datKm) ;
+        uneDate.init(uneDate.getYear(), uneDate.getMonth(), uneDate.getDayOfMonth(), new DatePicker.OnDateChangedListener() {
+            @Override
+            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                valoriseProprietes();
+            }
+        });
+    }
+
+    private void valoriseProprietes() {
+        //annee = ((DatePicker)findViewById(R.id.datKm)).getYear() ;
+        //mois = ((DatePicker)findViewById(R.id.datKm)).getMonth() + 1 ;
+        // récupération de la qte correspondant au mois actuel
+        qte = 0 ;
+        int key = annee*100+mois ;
+        if (Global.listFraisMois.containsKey(key)) {
+            qte = Global.listFraisMois.get(key).getKm() ;
+        }
+        ((EditText)findViewById(R.id.txtKm)).setText(String.valueOf(qte)) ;
+    }
+
+
+
 }
