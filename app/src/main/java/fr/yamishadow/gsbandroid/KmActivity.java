@@ -58,7 +58,7 @@ public class KmActivity extends AppCompatActivity {
 	}
 	
 	/**
-	 *azerty Sur la selection de l'image : retour au menu principal
+	 * Sur la selection de l'image : retour au menu principal
 	 */
     private void imgReturn_clic() {
     	((ImageView)findViewById(R.id.imgKmReturn)).setOnClickListener(new ImageView.OnClickListener() {
