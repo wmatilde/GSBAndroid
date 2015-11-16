@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         // chargement des méthodes événementielles
         cmdMenu_clic(((Button)findViewById(R.id.cmdKm)), KmActivity.class) ;
         cmdMenu_clic(((Button)findViewById(R.id.cmdNuitee)), HotelActivity.class) ;
+        cmdMenu_clic(((Button)findViewById(R.id.cmdEtape)),EtapeActivity.class);
         cmdMenu_clic(((Button)findViewById(R.id.cmdHf)), HfActivity.class) ;
         cmdMenu_clic(((Button)findViewById(R.id.cmdHfRecap)), HfRecapActivity.class) ;
         cmdTransfert_clic() ;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Récupére la sérialisation si elle existe
      */
+
     private void recupSerialize() {
     	Global.listFraisMois = (Hashtable<Integer, FraisMois>) Serializer.deSerialize(Global.filename, MainActivity.this) ;
     	// si rien n'a été récupéré, il faut créer la liste

@@ -20,6 +20,8 @@ public class HotelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+        // modification de l'affichage du DatePicker
+        Global.changeAfficheDate((DatePicker) findViewById(R.id.datKm)) ;
         imgReturn_clic() ;
         dat_clic();
         cmdPlus_clic() ;
@@ -30,7 +32,7 @@ public class HotelActivity extends AppCompatActivity {
      * Sur la selection de l'image : retour au menu principal
      */
     private void imgReturn_clic() {
-        ((ImageView)findViewById(R.id.imgKmReturn)).setOnClickListener(new ImageView.OnClickListener() {
+        ((ImageView)findViewById(R.id.imgKmReturn)).setOnClickListener( new ImageView.OnClickListener() {
             public void onClick(View v) {
                 retourActivityPrincipale();
             }
@@ -81,7 +83,7 @@ public class HotelActivity extends AppCompatActivity {
             // creation du mois et de l'annee s'ils n'existent pas déjà
             Global.listFraisMois.put(key, new FraisMois(annee, mois)) ;
         }
-        Global.listFraisMois.get(key).setKm(qte) ;
+        Global.listFraisMois.get(key).setNuitee(qte); ;
     }
 
     private void dat_clic() {
@@ -101,7 +103,7 @@ public class HotelActivity extends AppCompatActivity {
         qte = 0 ;
         int key = annee*100+mois ;
         if (Global.listFraisMois.containsKey(key)) {
-            qte = Global.listFraisMois.get(key).getKm() ;
+            qte = Global.listFraisMois.get(key).getNuitee() ;
         }
         ((EditText)findViewById(R.id.txtKm)).setText(String.valueOf(qte)) ;
     }
