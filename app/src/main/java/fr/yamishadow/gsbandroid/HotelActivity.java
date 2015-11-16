@@ -21,7 +21,7 @@ public class HotelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
         // modification de l'affichage du DatePicker
-        Global.changeAfficheDate((DatePicker) findViewById(R.id.datKm)) ;
+        Global.changeAfficheDate((DatePicker) findViewById(R.id.datNuitee)) ;
         imgReturn_clic() ;
         dat_clic();
         cmdPlus_clic() ;
@@ -32,7 +32,7 @@ public class HotelActivity extends AppCompatActivity {
      * Sur la selection de l'image : retour au menu principal
      */
     private void imgReturn_clic() {
-        ((ImageView)findViewById(R.id.imgKmReturn)).setOnClickListener( new ImageView.OnClickListener() {
+        ((ImageView)findViewById(R.id.imgNuiteeReturn)).setOnClickListener( new ImageView.OnClickListener() {
             public void onClick(View v) {
                 retourActivityPrincipale();
             }
@@ -51,7 +51,7 @@ public class HotelActivity extends AppCompatActivity {
      * Sur le clic du bouton plus : ajout de 10 dans la quantité
      */
     private void cmdPlus_clic() {
-        ((Button)findViewById(R.id.cmdKmPlus)).setOnClickListener(new Button.OnClickListener() {
+        ((Button)findViewById(R.id.cmdNuitPlus)).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 qte += 10;
                 enregNewQte();
@@ -63,7 +63,7 @@ public class HotelActivity extends AppCompatActivity {
      * Sur le clic du bouton moins : enléve 10 dans la quantité si c'est possible
      */
     private void cmdMoins_clic() {
-        ((Button)findViewById(R.id.cmdKmMoins)).setOnClickListener(new Button.OnClickListener() {
+        ((Button)findViewById(R.id.cmdNuitMoins)).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 qte = Math.max(0, qte - 10); // suppression de 10 si possible
                 enregNewQte();
@@ -87,7 +87,7 @@ public class HotelActivity extends AppCompatActivity {
     }
 
     private void dat_clic() {
-        final DatePicker uneDate = (DatePicker)findViewById(R.id.datKm) ;
+        final DatePicker uneDate = (DatePicker)findViewById(R.id.datNuitee) ;
         uneDate.init(uneDate.getYear(), uneDate.getMonth(), uneDate.getDayOfMonth(), new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -97,15 +97,15 @@ public class HotelActivity extends AppCompatActivity {
     }
 
     private void valoriseProprietes() {
-        //annee = ((DatePicker)findViewById(R.id.datKm)).getYear() ;
-        //mois = ((DatePicker)findViewById(R.id.datKm)).getMonth() + 1 ;
+        annee = ((DatePicker)findViewById(R.id.datNuitee)).getYear() ;
+        mois = ((DatePicker)findViewById(R.id.datNuitee)).getMonth() + 1 ;
         // récupération de la qte correspondant au mois actuel
         qte = 0 ;
         int key = annee*100+mois ;
         if (Global.listFraisMois.containsKey(key)) {
             qte = Global.listFraisMois.get(key).getNuitee() ;
         }
-        ((EditText)findViewById(R.id.txtKm)).setText(String.valueOf(qte)) ;
+        ((EditText)findViewById(R.id.txtNuits)).setText(String.valueOf(qte)) ;
     }
 
 

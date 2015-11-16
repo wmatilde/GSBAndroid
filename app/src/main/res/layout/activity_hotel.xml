@@ -24,7 +24,7 @@
             android:padding="5dp">
 
             <ImageView
-                android:id="@+id/imgKmReturn"
+                android:id="@+id/imgNuiteeReturn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -44,7 +44,7 @@
             <DatePicker
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/datKm"
+                android:id="@+id/datNuitee"
                 android:datePickerMode="spinner"
                 android:calendarViewShown="false" />
         </LinearLayout>
@@ -101,14 +101,14 @@
                 android:paddingLeft="5dp" >
 
                 <Button
-                    android:id="@+id/cmdKmPlus"
+                    android:id="@+id/cmdNuitPlus"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:text="+"
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/cmdKmMoins"
+                    android:id="@+id/cmdNuitMoins"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:text="-"
