@@ -137,6 +137,7 @@ public class KmActivity extends AppCompatActivity {
 	 */
 	private void retourActivityPrincipale() {
 		Intent intent = new Intent(KmActivity.this, MainActivity.class) ;
-		startActivity(intent) ;   					
+		startActivity(intent) ;
+		finish();
 	}
 }

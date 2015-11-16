@@ -45,6 +45,7 @@ public class RepasActivity extends AppCompatActivity {
     private void retourActivityPrincipale() {
         Intent intent = new Intent(RepasActivity.this, MainActivity.class) ;
         startActivity(intent) ;
+        finish();
     }
 
     /**

@@ -131,5 +131,6 @@ public class EtapeActivity extends AppCompatActivity {
     private void retourActivityPrincipale() {
         Intent intent = new Intent(EtapeActivity.this, MainActivity.class) ;
         startActivity(intent) ;
+        finish();
     }
 }

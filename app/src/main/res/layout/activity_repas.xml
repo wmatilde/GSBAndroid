@@ -59,7 +59,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:paddingLeft="10dp" >
+                android:paddingLeft="10dp"
+                android:weightSum="1">
 
                 <TextView
                     android:id="@+id/lblRepas"
@@ -67,7 +68,9 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Repas"
-                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_weight="1"
+                    android:textSize="18dp" />
 
             </LinearLayout>
 

@@ -45,6 +45,7 @@ public class HotelActivity extends AppCompatActivity {
     private void retourActivityPrincipale() {
         Intent intent = new Intent(HotelActivity.this, MainActivity.class) ;
         startActivity(intent) ;
+        finish();
     }
 
     /**
