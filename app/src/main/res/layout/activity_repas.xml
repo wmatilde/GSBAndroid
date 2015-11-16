@@ -5,7 +5,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="fr.yamishadow.gsbandroid.HotelActivity">
+    tools:context="fr.yamishadow.gsbandroid.RepasActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -24,11 +24,11 @@
             android:padding="5dp">
 
             <ImageView
-                android:id="@+id/imgNuiteeReturn"
+                android:id="@+id/imgRepasReturn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/frais_nuitee" />
+                android:src="@drawable/frais_repas" />
 
         </LinearLayout>
 
@@ -44,7 +44,7 @@
             <DatePicker
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/datNuitee"
+                android:id="@+id/datRepas"
                 android:datePickerMode="spinner"
                 android:calendarViewShown="false" />
         </LinearLayout>
@@ -52,7 +52,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.22"
             android:padding="5dp" >
 
             <LinearLayout
@@ -62,11 +62,11 @@
                 android:paddingLeft="10dp" >
 
                 <TextView
-                    android:id="@+id/lblNuit"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/lblRepas"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Nuits"
+                    android:text="Repas"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
             </LinearLayout>
@@ -78,7 +78,7 @@
                 android:paddingRight="10dp" >
 
                 <EditText
-                    android:id="@+id/txtNuits"
+                    android:id="@+id/txtRepas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -101,14 +101,14 @@
                 android:paddingLeft="5dp" >
 
                 <Button
-                    android:id="@+id/cmdNuitPlus"
+                    android:id="@+id/cmdRepasPlus"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:text="+"
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/cmdNuitMoins"
+                    android:id="@+id/cmdRepasMoins"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:text="-"
@@ -120,12 +120,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.92"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:paddingTop="20dp" >
 
             <Button
-                android:id="@+id/cmdKmValider"
+                android:id="@+id/cmdRepasValider"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

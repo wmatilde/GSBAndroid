@@ -24,7 +24,7 @@ public class EtapeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etape);
         // modification de l'affichage du DatePicker
-        Global.changeAfficheDate((DatePicker) findViewById(R.id.datKm)) ;
+        Global.changeAfficheDate((DatePicker) findViewById(R.id.datEtape)) ;
         // valorisation des propriétés
         valoriseProprietes() ;
         // chargement des méthodes événementielles
@@ -33,13 +33,6 @@ public class EtapeActivity extends AppCompatActivity {
         cmdPlus_clic() ;
         cmdMoins_clic() ;
         dat_clic() ;
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.frais_km, menu);
-        return true;
     }
 
     /**
@@ -52,16 +45,16 @@ public class EtapeActivity extends AppCompatActivity {
         qte = 0 ;
         int key = annee*100+mois ;
         if (Global.listFraisMois.containsKey(key)) {
-            qte = Global.listFraisMois.get(key).getKm() ;
+            qte = Global.listFraisMois.get(key).getEtape() ;
         }
-        ((EditText)findViewById(R.id.txtKm)).setText(String.valueOf(qte)) ;
+        ((EditText)findViewById(R.id.txtEtape)).setText(String.valueOf(qte)) ;
     }
 
     /**
      * Sur la selection de l'image : retour au menu principal
      */
     private void imgReturn_clic() {
-        ((ImageView)findViewById(R.id.imgKmReturn)).setOnClickListener(new ImageView.OnClickListener() {
+        ((ImageView)findViewById(R.id.imgEtapeReturn)).setOnClickListener(new ImageView.OnClickListener() {
             public void onClick(View v) {
                 retourActivityPrincipale() ;
             }
@@ -72,7 +65,7 @@ public class EtapeActivity extends AppCompatActivity {
      * Sur le clic du bouton valider : sérialisation
      */
     private void cmdValider_clic() {
-        ((Button)findViewById(R.id.cmdKmValider)).setOnClickListener(new Button.OnClickListener() {
+        ((Button)findViewById(R.id.cmdEtapeValider)).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
                 Serializer.serialize(Global.filename, Global.listFraisMois, EtapeActivity.this) ;
                 retourActivityPrincipale() ;
@@ -84,9 +77,9 @@ public class EtapeActivity extends AppCompatActivity {
      * Sur le clic du bouton plus : ajout de 10 dans la quantité
      */
     private void cmdPlus_clic() {
-        ((Button)findViewById(R.id.cmdKmPlus)).setOnClickListener(new Button.OnClickListener() {
+        ((Button)findViewById(R.id.cmdEtapePlus)).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                qte+=10 ;
+                qte+=1 ;
                 enregNewQte() ;
             }
         }) ;
@@ -96,9 +89,9 @@ public class EtapeActivity extends AppCompatActivity {
      * Sur le clic du bouton moins : enléve 10 dans la quantité si c'est possible
      */
     private void cmdMoins_clic() {
-        ((Button)findViewById(R.id.cmdKmMoins)).setOnClickListener(new Button.OnClickListener() {
+        ((Button)findViewById(R.id.cmdEtapeMoins)).setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
-                qte = Math.max(0, qte-10) ; // suppression de 10 si possible
+                qte = Math.max(0, qte-1) ; // suppression de 10 si possible
                 enregNewQte() ;
             }
         }) ;
@@ -108,7 +101,7 @@ public class EtapeActivity extends AppCompatActivity {
      * Sur le changement de date : mise à jour de l'affichage de la qte
      */
     private void dat_clic() {
-        final DatePicker uneDate = (DatePicker)findViewById(R.id.datKm) ;
+        final DatePicker uneDate = (DatePicker)findViewById(R.id.datEtape) ;
         uneDate.init(uneDate.getYear(), uneDate.getMonth(), uneDate.getDayOfMonth(), new OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
@@ -122,14 +115,14 @@ public class EtapeActivity extends AppCompatActivity {
      */
     private void enregNewQte() {
         // enregistrement dans la zone de texte
-        ((EditText)findViewById(R.id.txtKm)).setText(String.valueOf(qte)) ;
+        ((EditText)findViewById(R.id.txtEtape)).setText(String.valueOf(qte)) ;
         // enregistrement dans la liste
         int key = annee*100+mois ;
         if (!Global.listFraisMois.containsKey(key)) {
             // creation du mois et de l'annee s'ils n'existent pas déjà
             Global.listFraisMois.put(key, new FraisMois(annee, mois)) ;
         }
-        Global.listFraisMois.get(key).setKm(qte) ;
+        Global.listFraisMois.get(key).setEtape(qte); ;
     }
 
     /**
