@@ -21,7 +21,7 @@ public class FraisHfAdapter extends BaseAdapter {
 	Context context ; // contexte pour gérer la sérialisation
 	
 	/**
-	 * Constructeur de l'adapter pour valoriser les propriétés
+	 * Constructeur de l'adapter pour valoriser les propriétées
 	 * @param context
 	 * @param lesFrais
 	 * @param key
