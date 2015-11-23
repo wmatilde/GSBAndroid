@@ -80,6 +80,7 @@ public class FraisHfAdapter extends BaseAdapter {
 			holder.txtListJour = (TextView)convertView.findViewById(R.id.txtListJour) ;
 			holder.txtListMontant = (TextView)convertView.findViewById(R.id.txtListMontant) ;
 			holder.txtListMotif = (TextView)convertView.findViewById(R.id.txtListMotif);
+			holder.btnsuppr=(ImageView)convertView.findViewById(R.id.btnsuppr);
 			convertView.setTag(holder) ;
 		}else{
 			holder = (ViewHolder)convertView.getTag();
