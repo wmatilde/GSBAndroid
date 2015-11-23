@@ -26,13 +26,15 @@ public class RepasActivity extends AppCompatActivity {
         dat_clic();
         cmdPlus_clic() ;
         cmdMoins_clic() ;
+        cmdValider_clic();
+        valoriseProprietes();
     }
 
     /**
      * Sur la selection de l'image : retour au menu principal
      */
     private void imgReturn_clic() {
-        ((ImageView)findViewById(R.id.imgRepasReturn)).setOnClickListener( new ImageView.OnClickListener() {
+        ((ImageView)findViewById(R.id.imgRepasReturn)).setOnClickListener(new ImageView.OnClickListener() {
             public void onClick(View v) {
                 retourActivityPrincipale();
             }
@@ -95,6 +97,15 @@ public class RepasActivity extends AppCompatActivity {
                 valoriseProprietes();
             }
         });
+    }
+
+    private void cmdValider_clic() {
+        ((Button)findViewById(R.id.cmdRepasValider)).setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Serializer.serialize(Global.filename, Global.listFraisMois, RepasActivity.this);
+                retourActivityPrincipale();
+            }
+        }) ;
     }
 
     private void valoriseProprietes() {

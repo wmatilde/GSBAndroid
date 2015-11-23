@@ -126,7 +126,7 @@
             android:paddingTop="20dp" >
 
             <Button
-                android:id="@+id/cmdKmValider"
+                android:id="@+id/cmdHoValider"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

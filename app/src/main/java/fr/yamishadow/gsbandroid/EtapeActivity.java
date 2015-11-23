@@ -29,7 +29,7 @@ public class EtapeActivity extends AppCompatActivity {
         valoriseProprietes() ;
         // chargement des méthodes événementielles
         imgReturn_clic() ;
-        cmdValider_clic() ;
+        cmdValider_clic();
         cmdPlus_clic() ;
         cmdMoins_clic() ;
         dat_clic() ;
@@ -54,23 +54,11 @@ public class EtapeActivity extends AppCompatActivity {
      * Sur la selection de l'image : retour au menu principal
      */
     private void imgReturn_clic() {
-        ((ImageView)findViewById(R.id.imgEtapeReturn)).setOnClickListener(new ImageView.OnClickListener() {
+        ((ImageView) findViewById(R.id.imgEtapeReturn)).setOnClickListener(new ImageView.OnClickListener() {
             public void onClick(View v) {
-                retourActivityPrincipale() ;
+                retourActivityPrincipale();
             }
-        }) ;
-    }
-
-    /**
-     * Sur le clic du bouton valider : sérialisation
-     */
-    private void cmdValider_clic() {
-        ((Button)findViewById(R.id.cmdEtapeValider)).setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-                Serializer.serialize(Global.filename, Global.listFraisMois, EtapeActivity.this) ;
-                retourActivityPrincipale() ;
-            }
-        }) ;
+        });
     }
 
     /**
@@ -108,6 +96,15 @@ public class EtapeActivity extends AppCompatActivity {
                 valoriseProprietes();
             }
         });
+    }
+
+    private void cmdValider_clic() {
+        ((Button)findViewById(R.id.cmdEtapeValider)).setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
+                Serializer.serialize(Global.filename, Global.listFraisMois, EtapeActivity.this);
+                retourActivityPrincipale();
+            }
+        }) ;
     }
 
     /**
