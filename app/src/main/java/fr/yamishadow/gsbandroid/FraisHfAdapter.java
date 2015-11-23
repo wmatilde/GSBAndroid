@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.BaseAdapter;
 
@@ -63,6 +64,8 @@ public class FraisHfAdapter extends BaseAdapter {
 		TextView txtListJour ;
 		TextView txtListMontant ;
 		TextView txtListMotif ;
+		ImageView btnsuppr;
+
 	}
 	
 	/**
@@ -76,7 +79,7 @@ public class FraisHfAdapter extends BaseAdapter {
 			convertView = inflater.inflate(R.layout.layout_liste, null) ;
 			holder.txtListJour = (TextView)convertView.findViewById(R.id.txtListJour) ;
 			holder.txtListMontant = (TextView)convertView.findViewById(R.id.txtListMontant) ;
-			holder.txtListMotif = (TextView)convertView.findViewById(R.id.txtListMotif) ;
+			holder.txtListMotif = (TextView)convertView.findViewById(R.id.txtListMotif);
 			convertView.setTag(holder) ;
 		}else{
 			holder = (ViewHolder)convertView.getTag();
