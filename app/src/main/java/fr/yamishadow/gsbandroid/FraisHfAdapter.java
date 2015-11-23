@@ -82,13 +82,23 @@ public class FraisHfAdapter extends BaseAdapter {
 			holder.txtListMotif = (TextView)convertView.findViewById(R.id.txtListMotif);
 			holder.btnsuppr=(ImageView)convertView.findViewById(R.id.btnsuppr);
 			convertView.setTag(holder) ;
+			holder.btnsuppr.setTag(index);
 		}else{
 			holder = (ViewHolder)convertView.getTag();
 		}
 		holder.txtListJour.setText(lesFrais.get(index).getJour().toString()) ;
 		holder.txtListMontant.setText(lesFrais.get(index).getMontant().toString()) ;
 		holder.txtListMotif.setText(lesFrais.get(index).getMotif()) ;
+		holder.btnsuppr.setOnClickListener(new Button.OnClickListener() {
+			public void onClick(View v) {
+				int index = (Integer) v.getTag();
+				lesFrais.remove(index);
+				Serializer.serialize(Global.filename, Global.listFraisMois, context) ;
+				notifyDataSetChanged();
+			}
+		});
 		return convertView ;
 	}
+
 	
 }
