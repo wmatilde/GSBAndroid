@@ -1,4 +1,4 @@
-package com.applis.emds.pushedpuzzle.outils.accesHTTP;
+package fr.yamishadow.gsbandroid;
 
 import java.io.IOException;
 import java.util.ArrayList;
