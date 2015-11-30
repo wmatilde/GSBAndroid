@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         cmdMenu_clic(((Button)findViewById(R.id.cmdHf)), HfActivity.class) ;
         cmdMenu_clic(((Button)findViewById(R.id.cmdHfRecap)), HfRecapActivity.class);
         cmdMenu_clic(((Button)findViewById(R.id.cmdlogin)), LoginActivity.class);
-        cmdTransfert_clic();
+        //cmdTransfert_clic();
     }
 
     @Override
