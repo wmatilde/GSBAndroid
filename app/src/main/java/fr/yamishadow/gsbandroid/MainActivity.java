@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
         // chargement des méthodes événementielles
         cmdMenu_clic(((Button)findViewById(R.id.cmdKm)), KmActivity.class) ;
         cmdMenu_clic(((Button)findViewById(R.id.cmdNuitee)), HotelActivity.class) ;
-        cmdMenu_clic(((Button)findViewById(R.id.cmdEtape)),EtapeActivity.class);
-        cmdMenu_clic(((Button)findViewById(R.id.cmdRepas)),RepasActivity.class);
+        cmdMenu_clic(((Button)findViewById(R.id.cmdEtape)), EtapeActivity.class);
+        cmdMenu_clic(((Button)findViewById(R.id.cmdRepas)), RepasActivity.class);
         cmdMenu_clic(((Button)findViewById(R.id.cmdHf)), HfActivity.class) ;
-        cmdMenu_clic(((Button)findViewById(R.id.cmdHfRecap)), HfRecapActivity.class) ;
-        cmdMenu_clic(((Button) findViewById(R.id.cmdTransfert)), LoginActivity.class);
-                cmdTransfert_clic();
+        cmdMenu_clic(((Button)findViewById(R.id.cmdHfRecap)), HfRecapActivity.class);
+        cmdMenu_clic(((Button)findViewById(R.id.cmdTransfert)), LoginActivity.class);
+        cmdTransfert_clic();
     }
 
     @Override
