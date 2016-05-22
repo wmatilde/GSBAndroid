@@ -1,0 +1,19 @@
+Voici le mode opératoire de base pour réaliser un test unitaire sous Android Studio :
+
+Dans build.gradle de Module:app, ajouter ces 2 lignes dans dependencies :
+dependencies {
+    ...
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.0.5-beta'
+}
+
+Ouvrir la classe à tester. Double cliquer sur le nom de la classe et Alt-N puis choisir test dans le menu.
+Dans le menu flottant, cliquer sur Create Test.
+Cocher les méthodes à tester, puis 2 fois ok.
+Une classe de test a été créée dans le package de test, et s'est ouverte.
+Remplir les méthodes de test.
+Pour exécuter le test : à gauche, clic droit sur la classe de test, run.
+Dans la zone run du bas, il faut cliquer sur le nom de la classe de test pour voir le test s'exécuter.
+C’est alors le même principe que n’importe quel IDE.
+
+Bon courage à tous
